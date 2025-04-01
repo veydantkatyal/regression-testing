@@ -16,8 +16,20 @@ pip install selenium pytest webdriver-manager
 
 ## Run Tests
 ```bash
-pytest --html=report.html
+pytest --html=report.html --tb=short
 ```
+
+## View HTML report
+```bash
+start report.html
+```
+
+## Architecture diagram
+![](./images/architecture.png)
+
+## Result
+![](./images/report.png)
+
 
 ## CI/CD Setup (GitHub Actions)
 ```yaml
