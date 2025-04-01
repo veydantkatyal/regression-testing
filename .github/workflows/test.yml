@@ -1,0 +1,21 @@
+name: Regression Testing
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install Dependencies
+        run: pip install selenium pytest webdriver-manager pytest-html
+
+      - name: Run Tests
+        run: pytest --html=reports/test_report.html  # Removed --alluredir
